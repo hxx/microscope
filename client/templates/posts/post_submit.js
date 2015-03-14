@@ -27,7 +27,7 @@ Template.postSubmit.events({
     Meteor.call('postInsert', post, function(error, result) {
       // display errors and exit
       if (error)
-        return throwError(error.reason);
+        Errors.throw(error.reason);
 
       // show result if the post exist
       if (result.postExists)
